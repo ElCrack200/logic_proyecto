@@ -1,0 +1,499 @@
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"
+    />
+    <title>Conversor de Magnitudes</title>
+    
+    <link rel="icon" type="" href="img/icono.png" />
+    <link rel="stylesheet" href="css/styles2.css" />
+</head>
+<body>
+
+    <div class="blur" id="contenedor">
+        <div id="sidemenu" class="menu-expanded">
+      
+          <div id="header">
+            <div id="title"><span></span></div>
+      
+            <div id="menu-btn">
+              <div class="btn-contenedor"></div>
+              <div class="btn-contenedor"></div>
+              <div class="btn-contenedor"></div>
+            </div>
+        </div>
+      
+        <div id= "profile">
+           <div id="photo"></div>
+            <div id="name"><span>Menu</span></div>
+          </div>
+          <div id="menu-items">
+            <div class="item">
+              <a href="index.html">
+                <div class="icon"><img src="img/hogar.png" alt=""></div>
+                <div class="title"><span>Inicio</span></div>
+              </a>
+            </div>
+            <div class="item separator">
+            </div>
+            <div class="item">
+              <a href="Calculadora.html">
+                <div class="icon"><img src="img/calculator.png" alt=""></div>
+                <div class="title"><span>Calculadora</span></div>
+              </a>
+            </div>
+            <div class="item separator">
+            </div>
+            <div class="item">
+              <a href="Conversor.html">
+                <div class="icon"><img src="img/tools.png" alt=""></div>
+                <div class="title"><span>Conversor de Unidades</span></div>
+              </a>
+            </div>
+            <div class="item separator">
+            </div>
+      
+        </div>
+      </div>
+      </div>
+      </div>
+      </div>
+
+      <script>
+        const btn = document.querySelector('#menu-btn');
+        const menu = document.querySelector('#sidemenu');
+        btn.addEventListener('click', e =>{
+          menu.classList.toggle("menu-collapsed");
+          menu.calssList.toggle("menu-expanded");
+     
+          document.querySelector("body").classList.toggle("body-expanded");
+     
+         });
+        </script>
+
+
+
+    <div>
+    <div class="titulo-principal">
+        <h1 class="converter-title">Covertidor de magnitudes</h1>   
+    </div>
+    <div class="menu">
+    <button type="button" onclick="mostrarLongitud();" class="boton1">Longitud</button>
+    <button type="button" onclick="mostrarMasa();" class="boton1">Masa</button>
+    <button type="button" onclick="mostrarTiempo();" class="boton1">Tiempo</button>
+    <button type="button" onclick="mostrarTemperatura();"class="boton1">Temperatura</button>
+<script>
+    function mostrarLongitud() {
+		document.getElementById('parte1').style.display = 'block';
+        document.getElementById('parte2').style.display = 'none';
+        document.getElementById('parte3').style.display = 'none'; 
+        document.getElementById('parte4').style.display = 'none';     
+		}
+    function mostrarMasa() {
+		document.getElementById('parte1').style.display = 'none';
+		document.getElementById('parte2').style.display = 'block';
+        document.getElementById('parte3').style.display = 'none';
+        document.getElementById('parte4').style.display = 'none'; 
+		}
+    function mostrarTiempo() {
+		document.getElementById('parte1').style.display = 'none';
+        document.getElementById('parte2').style.display = 'none';
+        document.getElementById('parte3').style.display = 'block'; 
+        document.getElementById('parte4').style.display = 'none';      
+		}
+    function mostrarTemperatura() {
+		document.getElementById('parte1').style.display = 'none';
+        document.getElementById('parte2').style.display = 'none';
+        document.getElementById('parte3').style.display = 'none'; 
+        document.getElementById('parte4').style.display = 'block';      
+		}
+</script>        
+    </div>
+
+
+  <div class="contenedor-longitudes" id="parte1">
+    <br>
+    <h2 class="titulo-secundario">Covertir longitudes</h2> 
+    <input type="text" placeholder="Longitud" id="input">
+    <img id="igual" src="img/igual.png" />
+    <input type="text" placeholder="Resultado" id="result">
+
+    
+    <select id="inputType">
+        <option value="Metros">Metros</option>
+        <option value="Kilometros">Kilometros</option>
+        <option value="Centimetros">Centimetros</option>
+        <option value="Millas">Millas</option>
+        <option value="Milimetros">Milimetros</option>
+    </select>
+    <select id="resultType">
+        <option value="Metros">Metros</option>
+        <option value="Kilometros">Kilometros</option>
+        <option value="Centimetros">Centimetros</option>
+        <option value="Millas">Millas</option>
+        <option value="Milimetros">Milimetros</option>
+    </select>
+
+ <script>
+     var input = document.getElementById('input');
+     var result = document.getElementById('result');
+     var inputType = document.getElementById('inputType');
+     var resultType = document.getElementById('resultType'); 
+     var inputTypeValue, resultTypeValue;
+
+    input.addEventListener("keyup",miResultado);
+    inputType.addEventListener("change",miResultado);
+    resultType.addEventListener("change",miResultado);
+
+    inputTypeValue = inputType.value;
+    resultTypeValue = resultType.value;
+
+    function miResultado(){
+        inputTypeValue = inputType.value;
+        resultTypeValue = resultType.value;
+        if(inputTypeValue === "Metros" && resultTypeValue === "Kilometros"){
+            result.value = Number(input.value)*0.001+"km";
+        }else if(inputTypeValue === "Metros" && resultTypeValue === "Centimetros"){
+            result.value = Number(input.value)*100+"cm";
+        }else if(inputTypeValue === "Metros" && resultTypeValue === "Metros"){
+            result.value = input.value+"m";
+        }else if(inputTypeValue === "Metros" && resultTypeValue === "Millas"){
+            result.value = Number(input.value)*0.000621371+"mi";
+        }else if(inputTypeValue === "Metros" && resultTypeValue === "Milimetros"){
+            result.value = Number(input.value)*1000+"ml";
+        }
+
+        if(inputTypeValue === "Kilometros" && resultTypeValue === "Metros"){
+            result.value = Number(input.value)*1000+"m";
+        }else if(inputTypeValue === "Kilometros" && resultTypeValue === "Centimetros"){
+            result.value = Number(input.value)*100000+"cm";
+        }else if(inputTypeValue === "Kilometros" && resultTypeValue === "Kilemetros"){
+            result.value = input.value+"km";
+        }else if(inputTypeValue === "Kilometros" && resultTypeValue === "Millas"){
+            result.value = Number(input.value)*0.621371+"mi";
+        }else if(inputTypeValue === "Kilometros" && resultTypeValue === "Milimetros"){
+            result.value = Number(input.value)*1e+6+"ml";
+        }
+
+        if(inputTypeValue === "Centimetros" && resultTypeValue === "Kilometros"){
+            result.value = Number(input.value)*0.00001+"km";
+        }else if(inputTypeValue === "Centimetros" && resultTypeValue === "Metros"){
+            result.value = Number(input.value)*0.01+"m";
+        }else if(inputTypeValue === "Centimetros" && resultTypeValue === "Centimetros"){
+            result.value = input.value+"cm";
+        }else if(inputTypeValue === "Centimetros" && resultTypeValue === "Millas"){
+            result.value = Number(input.value)*6.2137e-6+"mi";
+        }else if(inputTypeValue === "Centimetros" && resultTypeValue === "Milimetros"){
+            result.value = Number(input.value)*10+"ml";
+        }
+
+        if(inputTypeValue === "Millas" && resultTypeValue === "Kilometros"){
+            result.value = Number(input.value)*1.609+"km";
+        }else if(inputTypeValue === "Millas" && resultTypeValue === "Metros"){
+            result.value = Number(input.value)*1609+"m";
+        }else if(inputTypeValue === "Millas" && resultTypeValue === "Centimetros"){
+            result.value = Number(input.value)*160934+"cm";
+        }else if(inputTypeValue === "Millas" && resultTypeValue === "Millas"){
+            result.value = input.value+"mi";
+        }else if(inputTypeValue === "Millas" && resultTypeValue === "Milimetros"){
+            result.value = Number(input.value)*1.609e+6+"ml";
+        }
+
+        if(inputTypeValue === "Milimetros" && resultTypeValue === "Kilometros"){
+            result.value = Number(input.value)*1e-6+"km";
+        }else if(inputTypeValue === "Milimetros" && resultTypeValue === "Metros"){
+            result.value = Number(input.value)*0.001+"m";
+        }else if(inputTypeValue === "Milimetros" && resultTypeValue === "Centimetros"){
+            result.value = Number(input.value)*0.1+"cm";
+        }else if(inputTypeValue === "Milimetros" && resultTypeValue === "Millas"){
+            result.value = Number(input.value)*6.2137e-7+"mi";
+        }else if(inputTypeValue === "Milimetros" && resultTypeValue === "Milimetros"){
+            result.value = input.value+"ml";
+        }
+
+
+    }
+
+ </script>
+  </div>
+  <div class="contenedor-longitudes" id="parte2">
+    <br>
+    <h2 class="titulo-secundario">Covertir Masa</h2> 
+    <input type="text" placeholder="Masas" id="input2">
+    <img id="igual" src="img/igual.png" />
+    <input type="text" placeholder="Resultado" id="result2">
+
+    
+    <select id="inputType2">
+        <option value="Kilogramos">Kilogramos</option>
+        <option value="Miligramos">Miligramos</option>
+        <option value="Gramos">Gramos</option>
+        <option value="Libras">Libras</option>
+        <option value="Onzas">Onzas</option>
+    </select>
+    <select id="resultType2">
+        <option value="Kilogramos">Kilogramos</option>
+        <option value="Miligramos">Miligramos</option>
+        <option value="Gramos">Gramos</option>
+        <option value="Libras">Libras</option>
+        <option value="Onzas">Onzas</option>
+    </select>
+
+ <script>
+     var input2 = document.getElementById('input2');
+     var result2 = document.getElementById('result2');
+     var inputType2 = document.getElementById('inputType2');
+     var resultType2 = document.getElementById('resultType2'); 
+     var inputTypeValue2, resultTypeValue2;
+
+    input2.addEventListener("keyup",miResultado2);
+    inputType2.addEventListener("change",miResultado2);
+    resultType2.addEventListener("change",miResultado2);
+
+    inputTypeValue2= inputType2.value;
+    resultTypeValue2 = resultType2.value;
+
+    function miResultado2(){
+        inputTypeValue2 = inputType2.value;
+        resultTypeValue2 = resultType2.value;
+        if(inputTypeValue2 === "Kilogramos" && resultTypeValue2 === "Miligramos"){
+            result2.value = Number(input2.value)*1e+6+"mg";
+        }else if(inputTypeValue2 === "Kilogramos" && resultTypeValue2 === "Gramos"){
+            result2.value = Number(input2.value)*1000+"g";
+        }else if(inputTypeValue2 === "Kilogramos" && resultTypeValue2 === "Kilogramos"){
+            result2.value = input2.value+"kg";
+        }else if(inputTypeValue2 === "Kilogramos" && resultTypeValue2 === "Libras"){
+            result2.value = Number(input2.value)*2.20462+"lb";
+        }else if(inputTypeValue2 === "Kilogramos" && resultTypeValue2 === "Onzas"){
+            result2.value = Number(input2.value)*35.274+"oz";
+        }
+
+        if(inputTypeValue2 === "Miligramos" && resultTypeValue2 === "Miligramos"){
+            result2.value = input2.value+"mg";
+        }else if(inputTypeValue2 === "Miligramos" && resultTypeValue2 === "Gramos"){
+            result2.value = Number(input2.value)*0.001+"g";
+        }else if(inputTypeValue2 === "Miligramos" && resultTypeValue2 === "Kilogramos"){
+            result2.value = Number(input2.value)*1e-6+"kg";
+        }else if(inputTypeValue2 === "Miligramos" && resultTypeValue2 === "Libras"){
+            result2.value = Number(input2.value)*2.2046e-6+"lb";
+        }else if(inputTypeValue2 === "Miligramos" && resultTypeValue2 === "Onzas"){
+            result2.value = Number(input2.value)*3.5274e-5+"oz";
+        }
+
+        if(inputTypeValue2 === "Gramos" && resultTypeValue2 === "Miligramos"){
+            result2.value = Number(input2.value)*1000+"mg";
+        }else if(inputTypeValue2 === "Gramos" && resultTypeValue2 === "Gramos"){
+            result2.value = input2.value+"g"; 
+        }else if(inputTypeValue2 === "Gramos" && resultTypeValue2 === "Kilogramos"){
+            result2.value = Number(input2.value)*0.001+"kg";
+        }else if(inputTypeValue2 === "Gramos" && resultTypeValue2 === "Libras"){
+            result2.value = Number(input2.value)*0.00220462+"lb";
+        }else if(inputTypeValue2 === "Gramos" && resultTypeValue2 === "Onzas"){
+            result2.value = Number(input2.value)*0.035274+"oz";
+        }
+
+        if(inputTypeValue2 === "Libras" && resultTypeValue2 === "Miligramos"){
+            result2.value = Number(input2.value)*453592+"mg";
+        }else if(inputTypeValue2 === "Libras" && resultTypeValue2 === "Gramos"){
+            result2.value = Number(input2.value)*453.592+"g";
+        }else if(inputTypeValue2 === "Libras" && resultTypeValue2 === "Kilogramos"){
+            result2.value = Number(input2.value)*0.453592+"kg";
+        }else if(inputTypeValue2 === "Libras" && resultTypeValue2 === "Libras"){
+            result2.value = input2.value+"lb";
+        }else if(inputTypeValue2 === "Libras" && resultTypeValue2 === "Onzas"){
+            result2.value = Number(input2.value)*16+"oz";
+        }
+
+        if(inputTypeValue2 === "Onzas" && resultTypeValue2 === "Miligramos"){
+            result2.value = Number(input2.value)*28349.5+"kg";
+        }else if(inputTypeValue2 === "Onzas" && resultTypeValue2 === "Gramos"){
+            result2.value = Number(input2.value)*28.3495+"g";
+        }else if(inputTypeValue2 === "Onzas" && resultTypeValue2 === "Kilogramos"){
+            result2.value = Number(input2.value)*0.0283495+"kg";
+        }else if(inputTypeValue2 === "Onzas" && resultTypeValue2 === "Libras"){
+            result2.value = Number(input2.value)*0.0625+"lb";
+        }else if(inputTypeValue2 === "Onzas" && resultTypeValue2 === "Onzas"){
+            result2.value = input2.value+"oz";
+        }
+
+    }
+
+ </script>
+  </div>
+  <div class="contenedor-longitudes" id="parte3">
+    <br>
+    <h2 class="titulo-secundario">Covertir Tiempo</h2> 
+    <input type="text" placeholder="Tiempo" id="input3">
+    <img id="igual" src="img/igual.png" />
+    <input type="text" placeholder="Resultado" id="result3">
+
+    
+    <select id="inputType3">
+        <option value="Dias">Dias</option>
+        <option value="Horas">Horas</option>
+        <option value="Minutos">Minutos</option>
+        <option value="Segundos">Segundos</option>
+        <option value="Milisegundos">Milisegundos</option>
+    </select>
+    <select id="resultType3">
+        <option value="Dias">Dias</option>
+        <option value="Horas">Horas</option>
+        <option value="Minutos">Minutos</option>
+        <option value="Segundos">Segundos</option>
+        <option value="Milisegundos">Milisegundos</option>
+    </select>
+
+ <script>
+     var input3 = document.getElementById('input3');
+     var result3 = document.getElementById('result3');
+     var inputType3 = document.getElementById('inputType3');
+     var resultType3 = document.getElementById('resultType3'); 
+     var inputTypeValue3, resultTypeValue3;
+
+    input3.addEventListener("keyup",miResultado3);
+    inputType3.addEventListener("change",miResultado3);
+    resultType3.addEventListener("change",miResultado3);
+
+    inputTypeValue3= inputType3.value;
+    resultTypeValue3 = resultType3.value;
+
+    function miResultado3(){
+        inputTypeValue3 = inputType3.value;
+        resultTypeValue3 = resultType3.value;
+        if(inputTypeValue3 === "Dias" && resultTypeValue3 === "Horas"){
+            result3.value = Number(input3.value)*24+"h";
+        }else if(inputTypeValue3 === "Dias" && resultTypeValue3 === "Minutos"){
+            result3.value = Number(input3.value)*1440+"m";
+        }else if(inputTypeValue3 === "Dias" && resultTypeValue3 === "Dias"){
+            result3.value = input3.value+"d";
+        }else if(inputTypeValue3 === "Dias" && resultTypeValue3 === "Segundos"){
+            result3.value = Number(input3.value)*86400+"s";
+        }else if(inputTypeValue3 === "Dias" && resultTypeValue3 === "Milisegundos"){
+            result3.value = Number(input3.value)*8.64e+7+"ms";
+        }
+
+        if(inputTypeValue3 === "Horas" && resultTypeValue3 === "Horas"){
+            result3.value = input3.value+"h";
+        }else if(inputTypeValue3 === "Horas" && resultTypeValue3 === "Minutos"){
+            result3.value = Number(input3.value)*60+"m";
+        }else if(inputTypeValue3 === "Horas" && resultTypeValue3 === "Dias"){
+            result3.value = Number(input3.value)/24+"d";
+        }else if(inputTypeValue3 === "Horas" && resultTypeValue3 === "Segundos"){
+            result3.value = Number(input3.value)*3600+"s";
+        }else if(inputTypeValue3 === "Horas" && resultTypeValue3 === "Milisegundos"){
+            result3.value = Number(input3.value)*3.6e+6+"ms";
+        }
+
+
+        if(inputTypeValue3 === "Minutos" && resultTypeValue3 === "Horas"){
+            result3.value = Number(input3.value)/60+"h";
+        }else if(inputTypeValue3 === "Minutos" && resultTypeValue3 === "Minutos"){
+            result3.value = input3.value+"m";
+        }else if(inputTypeValue3 === "Minutos" && resultTypeValue3 === "Dias"){
+            result3.value = Number(input3.value)/1440+"d";
+        }else if(inputTypeValue3 === "Minutos" && resultTypeValue3 === "Segundos"){
+            result3.value = Number(input3.value)*60+"s";
+        }else if(inputTypeValue3 === "Minutos" && resultTypeValue3 === "Milisegundos"){
+            result3.value = Number(input3.value)*60000+"ms";
+        }
+
+
+        if(inputTypeValue3 === "Segundos" && resultTypeValue3 === "Horas"){
+            result3.value = Number(input3.value)/3600+"h";
+        }else if(inputTypeValue3 === "Segundos" && resultTypeValue3 === "Minutos"){
+            result3.value = Number(input3.value)/60+"m";
+        }else if(inputTypeValue3 === "Segundos" && resultTypeValue3 === "Dias"){
+            result3.value = Number(input3.value)/86400+"d";
+        }else if(inputTypeValue3 === "Segundos" && resultTypeValue3 === "Segundos"){
+            result3.value = input3.value+"s";
+        }else if(inputTypeValue3 === "Segundos" && resultTypeValue3 === "Milisegundos"){
+            result3.value = Number(input3.value)*1000+"ms";
+        }
+
+
+        if(inputTypeValue3 === "Milisegundos" && resultTypeValue3 === "Horas"){
+            result3.value = Number(input3.value)*2.7778e-7+"h";
+        }else if(inputTypeValue3 === "Milisegundos" && resultTypeValue3 === "Minutos"){
+            result3.value = Number(input3.value)/60000+"m";
+        }else if(inputTypeValue3 === "Milisegundos" && resultTypeValue3 === "Dias"){
+            result3.value = Number(input3.value)*1.1574e-8+"d";
+        }else if(inputTypeValue3 === "Milisegundos" && resultTypeValue3 === "Segundos"){
+            result3.value = Number(input3.value)*0.001+"s";
+        }else if(inputTypeValue3 === "Milisegundos" && resultTypeValue3 === "Milisegundos"){
+            result3.value = input3.value+"ms";
+        }
+
+
+    }
+
+ </script>
+  </div>
+  <div class="contenedor-longitudes" id="parte4">
+    <br>
+    <h2 class="titulo-secundario">Covertir Temperatura</h2> 
+    <input type="text" placeholder="Temperatura" id="input4">
+    <img id="igual" src="img/igual.png" />
+    <input type="text" placeholder="Resultado" id="result4">
+
+    
+    <select id="inputType4">
+        <option value="GradosCelsius">Grados Celsius</option>
+        <option value="GradosFahrenheit">Grados Fahrenheit</option>
+        <option value="Kelvin">Kelvin</option>
+    </select>
+    <select id="resultType4">
+        <option value="GradosCelsius">Grados Celsius</option>
+        <option value="GradosFahrenheit">Grados Fahrenheit</option>
+        <option value="Kelvin">Kelvin</option>
+    </select>
+
+ <script>
+     var input4 = document.getElementById('input4');
+     var result4 = document.getElementById('result4');
+     var inputType4 = document.getElementById('inputType4');
+     var resultType4 = document.getElementById('resultType4'); 
+     var inputTypeValue4, resultTypeValue4;
+
+    input4.addEventListener("keyup",miResultado4);
+    inputType4.addEventListener("change",miResultado4);
+    resultType4.addEventListener("change",miResultado4);
+
+    inputTypeValue4= inputType4.value;
+    resultTypeValue4 = resultType4.value;
+
+    function miResultado4(){
+        inputTypeValue4 = inputType4.value;
+        resultTypeValue4 = resultType4.value;
+        if(inputTypeValue4 === "GradosCelsius" && resultTypeValue4 === "GradosFahrenheit"){
+            result4.value = (Number(input4.value)*9/5)+32 +"°F";
+        }else if(inputTypeValue4 === "GradosCelsius" && resultTypeValue4 === "Kelvin"){
+            result4.value = Number(input4.value)+ 273.15 +"K";
+        }else if(inputTypeValue4 === "GradosCelsius" && resultTypeValue4 === "GradosCelsius"){
+            result4.value = input4.value+"°C";
+        }
+
+        if(inputTypeValue4 === "GradosFahrenheit" && resultTypeValue4 === "GradosFahrenheit"){
+            result4.value = input4.value+"°F"; 
+        }else if(inputTypeValue4 === "GradosFahrenheit" && resultTypeValue4 === "Kelvin"){
+            result4.value = (Number(input4.value)-32)*5/9+273.15 +"K";
+        }else if(inputTypeValue4 === "GradosFahrenheit" && resultTypeValue4 === "GradosCelsius"){
+            result4.value = (Number(input4.value)-32)*5/9 +"°C";
+        }
+
+
+        if(inputTypeValue4 === "Kelvin" && resultTypeValue4 === "GradosFahrenheit"){
+            result4.value = (Number(input4.value)-273.15)*9/5+32 +"°F";
+        }else if(inputTypeValue4 === "Kelvin" && resultTypeValue4 === "Kelvin"){
+            result4.value = input4.value+"K";
+        }else if(inputTypeValue4 === "Kelvin" && resultTypeValue4 === "GradosCelsius"){
+            result4.value = Number(input4.value)-273.15 +"°C";
+        }
+
+    }
+
+ </script>
+  </div>
+</body>
+</html>

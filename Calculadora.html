@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Calculadora</title>
+    <link rel="icon" type="" href="img/icono.png" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="css/styles.css">
+  </head>
+  <body>
+    <div id="contenedor">
+      <div id="sidemenu" class="menu-expanded">
+    
+        <div id="header">
+          <div id="title"><span></span></div>
+    
+          <div id="menu-btn">
+            <div class="btn-contenedor"></div>
+            <div class="btn-contenedor"></div>
+            <div class="btn-contenedor"></div>
+          </div>
+      </div>
+    
+      <div id= "profile">
+         <div id="photo"></div>
+          <div id="name"><span>Menu</span></div>
+        </div>
+        <div id="menu-items">
+          <div class="item">
+            <a href="index.html">
+              <div class="icon"><img src="img/hogar.png" alt=""></div>
+              <div class="title"><span>Inicio</span></div>
+            </a>
+          </div>
+          <div class="item separator">
+          </div>
+          <div class="item">
+            <a href="Calculadora.html">
+              <div class="icon"><img src="img/calculator.png" alt=""></div>
+              <div class="title"><span>Calculadora</span></div>
+            </a>
+          </div>
+          <div class="item separator">
+          </div>
+          <div class="item">
+            <a href="Conversor.html">
+              <div class="icon"><img src="img/tools.png" alt=""></div>
+              <div class="title"><span>Conversor de Unidades</span></div>
+            </a>
+          </div>
+          <div class="item separator">
+          </div>
+    
+      </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    <script>
+       const btn = document.querySelector('#menu-btn');
+       const menu = document.querySelector('#sidemenu');
+       btn.addEventListener('click', e =>{
+         menu.classList.toggle("menu-collapsed");
+         menu.calssList.toggle("menu-expanded");
+    
+         document.querySelector("body").classList.toggle("body-expanded");
+    
+        });
+       </script>
+
+<div class="titulo-principal">
+  <h1 class="converter-title">Calculadora</h1>   
+</div>
+
+
+
+    <main class="main">
+      <div class="calculator">
+        <div class="top-bar"></div>
+        <div class="screen">
+          <div class="screen__top" id="screen-operation">0</div>
+          <div class="screen__content" id="screen-result">0</div>
+        </div>
+        <div class="buttons" id="buttons">
+          <div class="button">C</div>
+          <div class="button">+/-</div>
+          <div class="button">.</div>
+          <div class="button">/</div>
+          <div class="button">7</div>
+          <div class="button">8</div>
+          <div class="button">9</div>
+          <div class="button">*</div>
+          <div class="button">4</div>
+          <div class="button">5</div>
+          <div class="button">6</div>
+          <div class="button">-</div>
+          <div class="button">1</div>
+          <div class="button">2</div>
+          <div class="button">3</div>
+          <div class="button">+</div>
+          <div class="button">0</div>
+          <div class="button"></div> 
+          <div class="button"></div>
+          <div class="button">=</div>
+        </div>
+      </div>
+    </main>
+    <script src="js/scripts.js"></script>
+  </body>
+</html>

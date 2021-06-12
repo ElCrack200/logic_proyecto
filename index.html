@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Inicio</title>
+    <link rel="icon" type="" href="img/icono.png"/>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Proyecto Final</title>
+  </head>
+  <body>
+    <header class="hero">
+      <div class="textos-hero">
+          <h1>Bienvenido al Website
+          </h1>
+          <p>En este Website se presenta el proyecto final correspondiente al curso de Lógica de sistemas</p>
+      </div>
+      <br>
+      <section class="team">
+        <div class="contenedor last-section">
+          <div class="contenedor-textos-main">
+              <h2 class="titulo left">Integrantes:</h2>
+              <h4 class="titulo left">Christopher Aly Cordero Alarcón</h4>
+              <h4 class="titulo left">Julio Ramiro Sincal Aroche</h4>
+              <h4 class="titulo left">Jonathan Ramiro Elías Vásquez</h4>
+              <h4 class="titulo left">Jesús Fernando Ruiz Castañeda</h4>
+
+          </div>
+          <img src="img/ilustracion1.svg" alt="">
+      </div>
+        </section>
+      <section class="work">
+      <div class="contenedor last-section">
+        <div class="contenedor-textos-main">
+            <h2 class="titulo left">Proyectos presentados:</h2>
+            <h4 class="titulo left">Calculadora básica:</h3>
+            <p class="parrafo"> Calculadora capaz de efectuar operaciones aritmeticas básicas</p>
+            <h4 class="titulo left">Conversor de magnitudes</h3>
+            <p class="parrafo"> Convierte longitudes, masa, tiempo y temperatura en sus respectivas magnitud</p>
+        </div>
+        <img src="img/ilustracion.svg" alt="">
+    </div>
+      </section>
+      <br><br>
+      <br><br>
+    <div id="contenedor">
+      <div id="sidemenu" class="menu-collapsed">
+    
+        <div id="header">
+          <div id="title"><span></span></div>
+    
+          <div id="menu-btn">
+            <div class="btn-contenedor"></div>
+            <div class="btn-contenedor"></div>
+            <div class="btn-contenedor"></div>
+          </div>
+      </div>
+    
+      <div id= "profile">
+         <div id="photo"></div>
+          <div id="name"><span>Menu</span></div>
+        </div>
+        <div id="menu-items">
+          <div class="item">
+            <a href="index.html">
+              <div class="icon"><img src="img/hogar.png" alt=""></div>
+              <div class="title"><span>Inicio</span></div>
+            </a>
+          </div>
+          <div class="item separator">
+          </div>
+          <div class="item">
+            <a href="Calculadora.html">
+              <div class="icon"><img src="img/calculator.png" alt=""></div>
+              <div class="title"><span>Calculadora</span></div>
+            </a>
+          </div>
+          <div class="item separator">
+          </div>
+          <div class="item">
+            <a href="Conversor.html">
+              <div class="icon"><img src="img/tools.png" alt=""></div>
+              <div class="title"><span>Conversor de Unidades</span></div>
+            </a>
+          </div>
+          <div class="item separator">
+          </div>
+    
+      </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    <script>
+       const btn = document.querySelector('#menu-btn');
+       const menu = document.querySelector('#sidemenu');
+       btn.addEventListener('click', e =>{
+         menu.classList.toggle("menu-collapsed");
+         menu.calssList.toggle("menu-expanded");
+    
+         document.querySelector("body").classList.toggle("body-expanded");
+    
+        });
+       </script>
+  </body>
+</html>

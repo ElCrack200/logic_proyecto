@@ -1,0 +1,314 @@
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 1350px;
+    height: 753.5px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    padding: 0;
+    margin: 0;
+    margin-left: var(--width-collapsed);
+    background: url(../img/Fondo.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+:root{
+    --width: 300px;
+    --padding: 10px;
+    --bgcolor: rgba(248, 248, 248, 0.199);
+    --hovercolor: rgba(148, 34, 255, 0.5);
+    --width-collapsed: 50px;
+
+  }
+  
+  .body-expanded{
+    margin-left: var(--width);
+  }
+  #main-container{
+    line-height: auto;
+    font-size: 23px;
+    color: rgb(248, 248, 248);
+    max-width: 80%;
+    margin: 0 auto;
+    overflow: hidden;
+    background-color: #7B09ED;
+  }
+  #sidemenu{
+    background-color: var(--bgcolor);
+    color: rgb(255, 255, 255);
+    position: fixed;
+    z-index: 1;
+    height: 100%;
+    left: 0;
+    top: 0;
+    border-radius: 6pxx;
+    box-shadow:rgba(0, 0, 0, 0.199) ;
+    
+  }
+  #sidemenu a{
+    color: white;
+    text-decoration: none;
+    
+  
+  }
+  /*
+     Encabezdao
+  */
+  #sidemenu #header{
+    box-sizing: border-box;
+    border-bottom: solid 3px var(--hovercolor);
+  }
+  
+  #sidemenu #header #title{
+    box-sizing: border-box;
+    overflow: hidden;
+  }
+  
+  #sidemenu #header #title, #sidemenu #header #menu-btn{
+    vertical-align: middle;
+  }
+  
+  #sidemenu #header #menu-btn{
+    display: inline-block;
+  }
+  
+  #sidemenu #header #menu-btn{
+    cursor: pointer;
+    padding: 10px;
+    width: var(--width-collapsed);
+    box-sizing: border-box;
+  }
+  
+  #sidemenu #header #menu-btn:hover{
+    background-color: var(--hovercolor);
+  }
+  
+  #sidemenu #header #menu-btn .btn-contenedor{
+    background-color: #494940;
+    width: 100%;
+    height: 2px;
+    margin: 5px 0;
+    
+  }
+  /*
+     Perfil
+  */
+  
+  #sidemenu #profile{
+    border-bottom: solid 3px var(--hovercolor);
+    padding: var(--padding) 0;
+    text-align: center;
+    -webkit-backdrop-filter: blur(0px);
+    backdrop-filter: blur(0px);
+    background-color: rgba(255, 255, 255, 0.13);
+    
+  }
+  
+  #sidemenu #profile #photo{
+    box-sizing: border-box;
+    padding: var(--padding);
+    margin: 0 auto;
+    
+  }
+  #sidemenu #profile #photo img{
+    width: 60%;
+  }
+  
+  #sidemenu #profile #photo,#sidemenu #profile #name{
+    font-size: 24px;
+    padding: var(--padding) 0;
+    overflow: hidden;
+    
+  }
+  /*
+     Items
+  */
+  #sidemenu #menu-items{
+    overflow: hidden;
+    -webkit-backdrop-filter: blur(0px);
+    backdrop-filter: blur(0px);
+    background-color: rgba(255, 255, 255, 0.13);
+  }
+  #sidemenu #menu-items .item{
+    width: var(--width);
+  }
+  #sidemenu #menu-items .item .icon{
+    display: inline-block;
+  }
+  #sidemenu #menu-items .item .icon,
+  #sidemenu #menu-items .item .title{
+    font-size: 16px;
+    vertical-align: middle;
+    overflow: hidden;
+    display: inline-block;
+  }
+  #sidemenu #menu-items .item a{
+    display: block;
+  }
+  #sidemenu #menu-items .item a:hover{
+    background-color: var(--hovercolor);
+  }
+  #sidemenu #menu-items .item .icon{
+    box-sizing: border-box;
+    padding: var(--padding);
+    width: var(--width-collapsed);
+    
+  }
+  #sidemenu #menu-items .item .icon img{
+    width: 110%;
+  }
+  #sidemenu #menu-items .item .title{
+    padding: var(--padding) 0;
+  }
+  #sidemenu #menu-items .item.separator{
+    height: 3px;
+    border-bottom: solid 3px var(--hovercolor);
+    margin: 5px 0;
+  }
+  
+  .menu-expanded{
+    width: var(--width);
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    -webkit-backdrop-filter: blur(15px);
+    backdrop-filter: blur(15px);
+    background-color: rgba(255, 255, 255, 0.13);
+  }
+  
+  .menu-collapsed #header #title{
+    display: inline-block;
+    width: calc(100% - 50px);
+    margin-right: -5px;
+    padding: var(--padding);
+  }
+  
+  .menu-expanded #header #title span{
+    width: calc(var(--width) - var(--width-collapsed) - 5px);
+    overflow: hidden;
+  }
+  
+  .menu-expandeds #profile #photo{
+    width: 200px;
+  }
+  .menu-expanded #profile #name{
+    width: 100%;
+  }
+  .menu-collapsed{
+    width: var(--width-collapsed);
+  }
+  .menu-collapsed #header #title{
+    width: 0;
+    height: 0;
+    padding: 0;
+    margin: 0;
+  }
+  .menu-collapsed #profile #name{
+    display: none;
+  }
+  .menu-collapsed .item{
+    width: 100px;
+  }
+  #parte2{
+    left: auto;  
+    margin-top: 20px;
+    text-align: justify;
+  background-color: #ffffff38;
+  }
+  .contenedor-longitudes {
+   -webkit-backdrop-filter: blur(15px);
+ backdrop-filter: blur(15px);
+ background-color: rgba(255, 255, 255, 0.13);
+ width: 700px;
+ height: 210px;
+ border-radius: 12px;
+  }
+  
+  .titulo-principal { 
+      position: relative;
+      text-align: center;
+      margin: 13px 0px;
+      height: 60px ;
+      color: rgb(255, 255, 255);
+      text-shadow: #ffffff;
+      margin-top: 30px;
+      font-size: 30px;
+      font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  }
+  input {
+      height: 30px;
+      width: 310px;
+      text-align: center;
+      font-family:Verdana, Geneva, Tahoma, sans-serif;
+  }
+  #input, #input2, #input3, #input4 {
+      margin-left: 25px ;
+      margin-top: 20px;
+      font-family:Verdana, Geneva, Tahoma, sans-serif;
+      ;
+  }
+  #igual{
+    height: 20px;
+margin-left: 12px;  }
+  #inputType,#resultType, #inputType2,#resultType2, #inputType3,#resultType3, #inputType4,#resultType4{
+      width: 310px;
+      height: 30px;
+      margin-left: 25px;
+      background-color: rgba(0, 0, 0, 0.315);
+      text-align: center;
+      font-family:Verdana, Geneva, Tahoma, sans-serif;
+      color: #ffffff;
+  }
+  #resultType, #resultType2, #resultType3,  #resultType4{
+      margin-left: 35px;
+      text-align: center;
+      font-family:Verdana, Geneva, Tahoma, sans-serif;
+  }
+  #igual{
+    width: 2.5%;
+}
+.titulo-secundario{
+  text-align: center;
+  color:#ffffff;
+  text-shadow: black 2px 2px;
+  font-size: 25px;
+ 
+}
+#parte2, #parte3, #parte4{
+  display: none;
+}
+.menu{
+  position: flex;
+  margin-top: 4%;
+  left: auto;
+}
+button {
+  background-color: #000000; 
+  border: none;
+  color: white;
+  padding: auto;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  -webkit-transition-duration: 0.4s; 
+  transition-duration: 0.4s;
+  cursor: pointer;
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.boton1 {
+  background-color: transparent; 
+  color: rgb(255, 255, 255) ; 
+  border: 2px solid #7e47ff;
+  border-radius: 5px;
+  
+}
+
+.boton1:hover {
+  background-color: #0000003f;
+  color: rgb(255, 255, 255);
+  border-radius: 10px;
+  position: center;
+}

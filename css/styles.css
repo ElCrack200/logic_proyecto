@@ -1,0 +1,363 @@
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1350px;
+  height: 753.5px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 18px;
+  padding: 0;
+  margin: 0;
+  margin-left: var(--width-collapsed);
+background: url(../img/Fondo.jpg);
+background-size: cover;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+.hero{
+margin-top: auto;
+
+}
+.textos-hero{
+  height: 300px;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.contenedor{
+    width: 90%;
+    max-width: 1000px;
+    overflow: hidden;
+    margin: auto;
+    padding: 0 0 80px 0;
+}
+.contenedor{
+    padding: 80px 0;
+}
+.titulo.left{
+  text-align: left;
+}
+.parrafo{
+  text-align: justify;
+  margin-bottom: 20px;
+}
+
+.last-section{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding-bottom: 1px;
+  color: white;
+  text-align: justify;
+}
+
+.last-section img{
+  width: 42%;
+}
+
+.last-section .contenedor-textos-main{
+  width: 30%;
+}
+
+ /* >>>>>>>>>>>>>>  Si pueden ponerle un titulo a ala calculadora porfa, pero que quede integrado con el fondo */
+/*>>>>>>>>>>>>>>>>>>>>>>><<<  estetica general delm cuerpo de la calculadora*/
+.main{
+  margin-left: -20%;
+}
+.calculator {
+  width: 350px;
+  height: 500px;
+  margin-top: 350px;
+  background: transparent;
+  border-radius: 15px;
+  position: relative; }
+  .calculator::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+    -webkit-box-shadow: 0 10px 20px black;
+    box-shadow: 0 10px 20px black;
+    opacity: .3; }
+
+.top-bar {
+  width: 91%;
+  height: 50px;
+  -webkit-backdrop-filter: blur(15px);
+  backdrop-filter: blur(15px);
+  background-color: rgba(255, 255, 255, 0.13);  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding-left: 2rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.212);
+  border-radius: 15px 15px 0 0; }
+  .top-bar::before {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 10px;
+    height: 10px;
+    background: green;
+    border-radius: 50%;
+    -webkit-box-shadow: 20px 0 0 grey,
+ -20px 0 0 red;
+    box-shadow: 20px 0 0 grey,
+ -20px 0 0 red; }
+/* >>>>>>>>>>>>>>>>>>>>>>>>   botones y imprecion de los datos ESTILO*/
+.screen {
+  width: 95.5%;
+  height: 120px;
+  text-align: right;
+  padding-right: 1rem;
+  padding-top: .5rem;
+  -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
+    background-color: rgba(255, 255, 255, 0.13); }
+  .screen__top {
+    font-size: 1.5rem;
+    color: white;
+   }
+  .screen__content {
+    font-size: 4rem;
+    color: white;
+  }
+/*estilo y tamaño de los botones incluido la iluminacion cuando se aplica el cursor sobre ellos (transparencia)*/
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 5px;
+  margin-top: 5px; }
+
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1em;
+  font-size: 1.21rem;
+  color: white;
+  background: white;
+  -webkit-backdrop-filter: blur(15px);
+    backdrop-filter: blur(15px);
+    background-color: rgba(255, 255, 255, 0.13);
+  position: relative;
+  z-index: 100; }
+  .button:nth-child(4n) {
+    background: rgba(255, 255, 255, 0.493); 
+    -webkit-backdrop-filter: blur(15px);
+    backdrop-filter: blur(15px);
+    background-color: rgba(255, 255, 255, 0.13);}
+  .button:nth-child(17) {
+    border-bottom-left-radius: 15px; }
+  .button:last-child {
+    border-bottom-right-radius: 15px; }
+  .button:not(:nth-child(18)):hover {
+    background: rgb(154, 46, 255);
+    cursor: pointer; }
+  
+    :root{
+      --width: 300px;
+    --padding: 10px;
+    --bgcolor: rgba(248, 248, 248, 0.199);
+    --hovercolor: rgba(148, 34, 255, 0.5);
+    --width-collapsed: 50px;
+
+    }
+    .body-expanded{
+      margin-left: var(--width);
+      
+    }
+    #main-container{
+      line-height: auto;
+      font-size: 23px;
+      color: rgb(255, 255, 255);
+      max-width: 80%;
+      margin: 0 auto;
+      overflow: hidden;
+      background-color: #7B09ED;
+    }
+    #sidemenu{
+      background-color: var(--bgcolor);
+      color: white;
+      position: fixed;
+      z-index: 1;
+      height: 100%;
+      left: 0;
+      top: 0;
+    }
+    #sidemenu a{
+      color: white;
+      text-decoration: none;
+    
+    }
+    /*
+       Encabezdo
+    */
+    #sidemenu #header{
+      box-sizing: border-box;
+      border-bottom: solid 3px var(--hovercolor);
+    }
+    
+    #sidemenu #header #title{
+      box-sizing: border-box;
+      overflow: hidden;
+    }
+    
+    #sidemenu #header #title, #sidemenu #header #menu-btn{
+      vertical-align: middle;
+    }
+    
+    #sidemenu #header #menu-btn{
+      display: inline-block;
+    }
+    
+    #sidemenu #header #menu-btn{
+      cursor: pointer;
+      padding: 10px;
+      width: var(--width-collapsed);
+      box-sizing: border-box;
+    }
+    
+    #sidemenu #header #menu-btn:hover{
+      background-color: var(--hovercolor);
+    }
+    
+    #sidemenu #header #menu-btn .btn-contenedor{
+      background-color: #494940;
+      width: 100%;
+      height: 2px;
+      margin: 5px 0;
+    }
+    /*
+       Perfil
+    */
+    
+    #sidemenu #profile{
+      border-bottom: solid 3px var(--hovercolor);
+      padding: var(--padding) 0;
+      text-align: center;
+      -webkit-backdrop-filter: blur(0px);
+    backdrop-filter: blur(0px);
+    background-color: rgba(255, 255, 255, 0.13);
+    }
+    
+    #sidemenu #profile #photo{
+      box-sizing: border-box;
+      padding: var(--padding);
+      margin: 0 auto;
+    }
+    #sidemenu #profile #photo img{
+      width: 60%;
+      
+    }
+    
+    #sidemenu #profile #photo,#sidemenu #profile #name{
+      font-size: 24px;
+      padding: var(--padding) 0;
+      overflow: hidden;
+      
+    }
+    /*
+       Items
+    */
+    #sidemenu #menu-items{
+      overflow: hidden;
+      -webkit-backdrop-filter: blur(0px);
+    backdrop-filter: blur(0px);
+    background-color: rgba(255, 255, 255, 0.13);
+    }
+    #sidemenu #menu-items .item{
+      width: var(--width);
+    }
+    #sidemenu #menu-items .item .icon{
+      display: inline-block;
+    }
+    #sidemenu #menu-items .item .icon,
+    #sidemenu #menu-items .item .title{
+      font-size: 16px;
+      vertical-align: middle;
+      overflow: hidden;
+      display: inline-block;
+    }
+    #sidemenu #menu-items .item a{
+      display: block;
+    }
+    #sidemenu #menu-items .item a:hover{
+      background-color: var(--hovercolor);
+    }
+    #sidemenu #menu-items .item .icon{
+      box-sizing: border-box;
+      padding: var(--padding);
+      width: var(--width-collapsed);
+    }
+    #sidemenu #menu-items .item .icon img{
+      width: 110%;
+    }
+    #sidemenu #menu-items .item .title{
+      padding: var(--padding) 0;
+    }
+    #sidemenu #menu-items .item.separator{
+      height: 3px;
+      border-bottom: solid 3px var(--hovercolor);
+      margin: 5px 0;
+    }
+    
+    .menu-expanded{
+      width: var(--width);
+      box-shadow: 0 0 10px rgba(0,0,0,0.5);
+      -webkit-backdrop-filter: blur(15px);
+    backdrop-filter: blur(15px);
+    background-color: rgba(255, 255, 255, 0.13);
+    }
+    
+    .menu-collapsed #header #title{
+      display: inline-block;
+      width: calc(100% - 50px);
+      margin-right: -5px;
+      padding: var(--padding);
+    }
+    
+    .menu-expanded #header #title span{
+      width: calc(var(--width) - var(--width-collapsed) - 5px);
+      overflow: hidden;
+    }
+    
+    .menu-expandeds #profile #photo{
+      width: 200px;
+    }
+    .menu-expanded #profile #name{
+      width: 100%;
+    }
+    .menu-collapsed{
+      width: var(--width-collapsed);
+    }
+    .menu-collapsed #header #title{
+      width: 0;
+      height: 0;
+      padding: 0;
+      margin: 0;
+    }
+    .menu-collapsed #profile #name{
+      display: none;
+    }
+    .menu-collapsed .item{
+      width: 100px;
+    }
+    
+    .titulo-principal {
+      position: relative;
+      text-align: center;
+      left: 5%;
+      height: 60px ;
+      color: rgb(255, 255, 255);
+      text-shadow: rgba(0, 0, 0, 0.205) 2.3px 2.3px;
+      margin-top: 30px;
+      font-size: 30px;
+      font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+      margin-top: -55%;
+  }
